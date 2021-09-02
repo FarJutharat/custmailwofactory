@@ -14,12 +14,25 @@ import java.util.Scanner;
  */
 public class CustomerMailApplication {
 
+    static private Customer customer ;
     public static void main(String[] args) {
         Scanner inp = new Scanner(System.in);
         System.out.print("Please choose customer type 1. Regular, 2. Mountain, 3. Delinquent ");
         int type = inp.nextInt();
         
-        Customer customer = CustomerFactor.createCustomer(type);
+        
+        switch(type) {
+            case 1:
+                customer = CustomerFactor.createCustomer("Regular");
+                break;
+            case 2:
+                customer = CustomerFactor.createCustomer("Mountain");
+                break;
+            case 3:
+                customer = CustomerFactor.createCustomer("Delinquent");
+                break;
+
+        }
         System.out.println(customer.createMail());
 
     }

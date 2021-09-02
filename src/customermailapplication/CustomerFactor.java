@@ -1,12 +1,12 @@
 package customermailapplication;
 
 public class CustomerFactor {
-    public static Customer createCustomer(int type){
-        if (type == 1)
+    public static Customer createCustomer(String type){
+        if (type == "Regular")
                 return new RegularCustomer();
-        if (type == 2)
+        if (type == "Mountain")
                 return new MountainCustomer();
-        if (type == 3)
+        if (type == "Delinquent")
                 return new DelinquentCustomer(); 
         else return null;
         }
